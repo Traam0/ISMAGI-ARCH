@@ -1,0 +1,5 @@
+{
+    "id": "unique|primary|auto",
+    "emai": "unique|not null",
+    "password": "unique|not null|hash"
+}

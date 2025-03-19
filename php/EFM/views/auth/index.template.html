@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@put($title)</title>
+    <script src="/scripts/theme.js"></script>
+</head>
+<body class="w-dvw h-dvh bg-gradient-to-br from-background to-slate-200 dark:text-white dark:from-dark-background dark:to-slate-900 overflow-hidden flex flex-col items-center justify-center">
+<form method="post" action="/login" class="max-w-lg w-full bg-background dark:bg-dark-background shadow-md rounded-lg border-2 border-border dark:border-dark-border px-6 py-8 flex flex-col gap-8">
+    <section class="text-center">
+        <h1 class="text-3xl font-medium tracking-wide font-mono"> BlogLog </h1>
+        <p>Welcome Back</p>
+    </section>
+
+    @if($errors)
+        <div class="bg-error text-sm text-error-content font-medium rounded-md px-3 py-2">
+            <ul>
+            @foreach($errors as $error)
+                <li>• @put($error)</li>
+            @endforeach
+            </ul>
+        </div>
+    @endif
+    <section class="flex flex-col gap-3 w-full">
+        <div class="w-full">
+            <label class="px-2">
+                Username
+                <input value="@put($formValues['username'])" type="text" name="username" class="w-full bg-foreground dark:bg-dark-foreground appearance-none px-3 py-2 rounded-md border-2 border-border dark:border-dark-border" placeholder="Username" />
+            </label>
+        </div>
+        <div class="w-full">
+            <label class="px-2">
+                Password
+                <input value="@put($formValues['password'])" type="password" name="password" class="w-full bg-foreground dark:bg-dark-foreground appearance-none px-3 py-2 rounded-md border-2 border-border dark:border-dark-border" placeholder="********" />
+            </label>
+        </div>
+    </section>
+
+    <section class="flex flex-col gap-2 justify-center items-center">
+        <button class="px-4 py-2 bg-primary rounded-lg w-full" type="submit">login</button>
+<!--        <a href="/register" class="px-4 py-2 text-primary rounded-lg w-full text-center ">create one now</a>-->
+    </section>
+    <p class="text-copy-light dark:text-dark-copy-light text-sm text-center">By Clicking continue, you agree to our terms of service</p>
+</form>
+</body>
+</html>
+
+@css(index)
+
+

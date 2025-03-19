@@ -1,0 +1,1 @@
+<?php  $columns = array_map("trim", explode(",", "$1")); $values = array_map("trim", explode(",", "$2")); $row = array_combine($columns, $values); if(isset($row["id"])){ if($row["id"] == "auto"){ $row["id"] = end($this->context)["id"] + 1; } else { if(is_numeric($row["id"])) $row["id"] = intval($row["id"]); } } $rows = [...$this->context,$row]; ?>

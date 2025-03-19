@@ -1,0 +1,1 @@
+<?php $rows = array_filter($this->context, function($entity) { return $entity['$1'] $2 $3; }); if('$4' != 'all'){if($4 == 1){$rows = $rows[0];} else $rows = array_slice($rows, 0, $4);} ?>

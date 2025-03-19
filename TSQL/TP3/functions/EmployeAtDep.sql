@@ -1,0 +1,6 @@
+--use TP3A;
+
+CREATE FUNCTION EmployeAtDep (@DepId INT) RETURNS TABLE
+AS RETURN (SELECT E.*
+FROM Employe E
+WHERE E.DepartmentID = @DepId);
